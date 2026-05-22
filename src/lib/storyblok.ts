@@ -21,6 +21,7 @@ import KontaktInfoCard from "@/components/KontaktInfoCard";
 import Inkluderet from "@/components/Inkluderet";
 import HeroCard from "@/components/HeroCard";
 import Galleri from "@/components/Galleri";
+import Button from "@/components/Button";
 
 export const initStoryblok = () => {
   storyblokInit({
@@ -48,7 +49,7 @@ export const initStoryblok = () => {
         kontaktinfo: KontaktInfo,
         kontaktinfocard: KontaktInfoCard,
         inkluderet: Inkluderet,
-
+        button: Button,
     },
   });
 };
