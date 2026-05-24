@@ -21,6 +21,7 @@ import KontaktInfoCard from "@/components/KontaktInfoCard";
 import Inkluderet from "@/components/Inkluderet";
 import HeroCard from "@/components/HeroCard";
 import Galleri from "@/components/Galleri";
+import Button from "@/components/Button";
 
 export const initStoryblok = () => {
   storyblokInit({
@@ -49,6 +50,27 @@ export const initStoryblok = () => {
       kontaktinfocard: KontaktInfoCard,
       inkluderet: Inkluderet,
       galleri: Galleri,
+        page: Page,
+        hero: Hero,
+        herocard: HeroCard,
+        murercard: Murercard,
+        vaerdier: Vaerdier,
+        vaerdicard: VaerdiCard,
+        ydelser: Ydelser,
+        ydelsercard: YdelserCard,
+        kundeanmeldelser: Kundeanmeldelser,
+        kundeanmeldelsercard: KundeanmeldelserCard,
+        tidligereprojekter: TidligereProjekter,
+        kontaktforside: KontaktForside,
+        faq: Faq,
+        faqitem: FaqItem,
+        tidligereydelse: TidligereYdelse,
+        procesydelsecard: ProcesYdelseCard,
+        procesydelse: ProcesYdelse,
+        kontaktinfo: KontaktInfo,
+        kontaktinfocard: KontaktInfoCard,
+        inkluderet: Inkluderet,
+        button: Button,
     },
   });
 };

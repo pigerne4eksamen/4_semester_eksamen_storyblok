@@ -1,4 +1,5 @@
-import { storyblokEditable } from "@storyblok/react";
+import { storyblokEditable, StoryblokComponent } from "@storyblok/react";
+
 
 export default function Hero({ blok }: { blok: any }) {
   if (blok?.title?.toLowerCase() === "galleri") {
@@ -37,11 +38,9 @@ export default function Hero({ blok }: { blok: any }) {
           {/* IMAGE */}
           {blok.image?.filename && <img src={blok.image.filename} alt={blok.image.alt || ""} />}
 
-          {/* PRIMARY BUTTON */}
-          {blok.primary_button_text && <a href={blok.primary_button_link?.url}>{blok.primary_button_text}</a>}
-
-          {/* SECONDARY BUTTON */}
-          {blok.secondary_button_text && <a href={blok.secondary_button_link?.url}>{blok.secondary_button_text}</a>}
+          {blok.buttons?.map((button: any) => (
+            <StoryblokComponent blok={button} key={button._uid} />
+          ))}
         </section>
       );
 
@@ -52,7 +51,9 @@ export default function Hero({ blok }: { blok: any }) {
           <h2>{blok.subtitle}</h2>
           <p>{blok.text}</p>
           {blok.image?.filename && <img src={blok.image.filename} alt={blok.image.alt || ""} />}
-            
+          {blok.buttons?.map((button: any) => (
+            <StoryblokComponent blok={button} key={button._uid} />
+          ))}
         </section>
       );
 
@@ -114,6 +115,14 @@ export default function Hero({ blok }: { blok: any }) {
               )}
             </div>
           </div>
+        <section {...storyblokEditable(blok)}>
+          <h1>{blok.title}</h1>
+          <h2>{blok.subtitle}</h2>
+          <p>{blok.text}</p>
+          {blok.image?.filename && <img src={blok.image.filename} alt={blok.image.alt || ""} />}
+          {blok.buttons?.map((button: any) => (
+            <StoryblokComponent blok={button} key={button._uid} />
+          ))}
         </section>
       );
 

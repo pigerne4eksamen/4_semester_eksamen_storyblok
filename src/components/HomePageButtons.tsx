@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-export default function HomepageButtons({ blok  }: { blok: any }) {
+export default function HomepageButtons({ blok }: { blok: any }) {
   return (
     <div className="flex gap-4 justify-center py-20">
       <Link href={blok.button_1_link?.cached_url || "#"} className="px-6 py-3 bg-blue-600 text-white rounded">
