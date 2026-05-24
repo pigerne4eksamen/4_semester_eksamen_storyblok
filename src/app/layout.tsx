@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { initStoryblok } from "@/lib/storyblok";
+import Header from "@/components/Header";
 initStoryblok();
 
 export const metadata: Metadata = {
@@ -15,7 +16,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full antialiased">
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
