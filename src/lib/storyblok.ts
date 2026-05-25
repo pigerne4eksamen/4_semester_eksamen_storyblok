@@ -20,8 +20,8 @@ import KontaktInfo from "@/components/KontaktInfo";
 import KontaktInfoCard from "@/components/KontaktInfoCard";
 import Inkluderet from "@/components/Inkluderet";
 import HeroCard from "@/components/HeroCard";
-import Galleri from "@/components/Galleri";
 import Button from "@/components/Button";
+import Galleri from "@/components/Galleri";
 
 export const initStoryblok = () => {
   storyblokInit({
