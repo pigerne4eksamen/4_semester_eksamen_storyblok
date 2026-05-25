@@ -50,6 +50,7 @@ export const initStoryblok = () => {
         kontaktinfocard: KontaktInfoCard,
         inkluderet: Inkluderet,
         button: Button,
+        galleri: Galleri,
     },
   });
 };

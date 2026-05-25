@@ -2,7 +2,7 @@ import Link from "next/link";
 import { storyblokEditable } from "@storyblok/react";
 
 const variants = {
-  primary: "bg-[#B64430] text-white",
+  primary: "bg-[#B64430] text-white w-fit",
   secondary: "bg-black text-white",
   outline: "border border-[#B64430] text-[#B64430]",
 };
