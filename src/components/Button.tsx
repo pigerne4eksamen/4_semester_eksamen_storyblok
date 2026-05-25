@@ -2,8 +2,8 @@ import Link from "next/link";
 import { storyblokEditable } from "@storyblok/react";
 
 const variants = {
-  primary: "bg-[#B64430] text-white w-fit",
-  secondary: "bg-black text-white",
+  primary: "bg-[#B64430] text-white w-fit px-6 py-3 text-lg font-medium",
+  secondary: "rounded border border-[#A0522D] bg-[#F5EDE0] px-6 py-3 text-lg font-medium text-[#A0522D] transition hover:bg-[#EDE3D4}",
   outline: "border border-[#B64430] text-[#B64430]",
 };
 

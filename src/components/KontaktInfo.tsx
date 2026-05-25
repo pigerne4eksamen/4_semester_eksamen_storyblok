@@ -1,16 +1,19 @@
-import { storyblokEditable, StoryblokComponent } from "@storyblok/react";
+import { storyblokEditable } from "@storyblok/react";
+import { HiPhone, HiMail, HiClock } from "react-icons/hi";
 
-export default function KontaktInfo({ blok }: { blok: any }) {
+const icons = {
+  phone: HiPhone,
+  mail: HiMail,
+  clock: HiClock,
+};
+
+export default function KontaktInfoCard({ blok }: { blok: any }) {
+  const Icon = icons[blok.icon as keyof typeof icons];
   return (
-    <section className="w-full" {...storyblokEditable(blok)}>
-      <div className="flex flex-col gap-6 md:grid md:grid-cols-2">
-        <h2>{blok.subtitle}</h2>
-        <div className="grid grid-cols-2 gap-6">
-          {blok.items?.map((item: any) => (
-            <StoryblokComponent key={item._uid} blok={item} />
-          ))}
-        </div>
-      </div>
-    </section>
+    <div {...storyblokEditable(blok)}>
+      {Icon && <Icon className="w-6 h-6 text-[#B64430]" />}
+      <h3>{blok.sectiontitle}</h3>
+      <p>{blok.text}</p>
+    </div>
   );
 }

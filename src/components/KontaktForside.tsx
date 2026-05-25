@@ -1,22 +1,9 @@
-import Link from "next/link";
-import { storyblokEditable } from "@storyblok/react";
 
-const getHref = (link: any) => {
-  const href = link?.cached_url || link?.url;
+import { storyblokEditable, StoryblokComponent } from "@storyblok/react";
 
-  if (!href) {
-    return "#";
-  }
 
-  if (href.startsWith("/") || href.startsWith("http")) {
-    return href;
-  }
-
-  return `/${href}`;
-};
 
 export default function KontaktForside({ blok }: { blok: any }) {
-  const href = getHref(blok.button_link);
 
   return (
     <section
@@ -32,15 +19,11 @@ export default function KontaktForside({ blok }: { blok: any }) {
           {blok.text}
         </p>
 
-        {blok.button_text && (
-          <Link
-            href={href}
-            className="cursor-pointer rounded bg-[#C84732] px-8 py-3 text-lg font-semibold text-white shadow-md"
-            style={{ cursor: "pointer" }}
-          >
-            {blok.button_text}
-          </Link>
-        )}
+       <div className="mt-8 flex justify-center md:justify-start">
+{blok.button?.map((button: any) => (
+ <StoryblokComponent blok={button} key={button._uid} />
+    ))}
+ </div>
       </div>
     </section>
   );

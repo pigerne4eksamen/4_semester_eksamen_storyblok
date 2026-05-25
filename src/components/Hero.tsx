@@ -1,5 +1,6 @@
 import { storyblokEditable, StoryblokComponent } from "@storyblok/react";
 
+
 export default function Hero({ blok }: { blok: any }) {
   if (blok?.title?.toLowerCase() === "galleri") {
     return (
@@ -30,18 +31,63 @@ export default function Hero({ blok }: { blok: any }) {
 
   switch (blok?.variant) {
     case "home":
-      return (
-        <section {...storyblokEditable(blok)}>
-          <h1>{blok.title}</h1>
-          <h2>{blok.subtitle}</h2>
-          {/* IMAGE */}
-          {blok.image?.filename && <img src={blok.image.filename} alt={blok.image.alt || ""} />}
+  return (
+    <section
+      {...storyblokEditable(blok)}
+      className="bg-[#F5EDE0] flex flex-col md:flex-row items-stretch justify-between px-6 md:px-20 py-10 gap-8"
+    >
+      {/* Venstre kolonne */}
+      <div className="flex flex-col md:justify-between md:w-1/2 md:h-[650px]">
 
+        {/* H1 + H2 */}
+        <div className="md:flex md:flex-col md:justify-center md:flex-1">
+          <h2 className="text-[#50543B] text-xl md:text-2xl font-light mb-2 text-center md:text-left">
+            {blok.subtitle}
+          </h2>
+
+          <h1 className="font-serif text-4xl md:text-6xl font-bold text-[#282828] leading-tight mb-8 text-center md:text-left">
+            {blok.title}
+          </h1>
+        </div>
+
+        {/* Billede på mobil */}
+        {blok.image?.filename && (
+          <div className="md:hidden flex justify-center mb-8">
+            <img
+              src={blok.image.filename}
+              alt={blok.image.alt || ""}
+              className="rounded-sm w-full object-cover h-[450px]"
+            />
+          </div>
+        )}
+
+        {/* Knapper */}
+        <div className="flex gap-4 justify-center md:justify-start mb-8">
           {blok.button?.map((button: any) => (
             <StoryblokComponent blok={button} key={button._uid} />
           ))}
-        </section>
-      );
+        </div>
+
+        {/* Cards / ikoner */}
+        <div className="flex flex-row gap-8 text-[#282828] text-sm justify-center md:justify-start pt-4">
+          {blok.cards?.map((card: any) => (
+            <StoryblokComponent blok={card} key={card._uid} />
+          ))}
+        </div>
+      </div>
+
+      {/* Desktop billede */}
+      {blok.image?.filename && (
+        <div className="hidden md:flex md:w-1/2 justify-center">
+          <img
+            src={blok.image.filename}
+            alt={blok.image.alt || ""}
+            className="rounded-sm w-[80%] object-cover h-[650px]"
+          />
+        </div>
+      )}
+    </section>
+  );
 
     case "ydelser":
       return (
@@ -80,58 +126,38 @@ export default function Hero({ blok }: { blok: any }) {
 
     case "omos":
       return (
-        <section
-          {...storyblokEditable(blok)}
-          className="relative overflow-hidden bg-[#F5EDE0]"
-        >
+        <section {...storyblokEditable(blok)} className="relative overflow-hidden bg-[#F5EDE0]">
           <div className="mx-auto max-w-7xl px-10 pb-2 pt-2 md:px-28 md:pb-14 md:pt-16">
-            <h1 className="font-serif text-3xl font-bold text-[#282828] md:text-6xl">
-              {blok.title}
-            </h1>
+            <h1 className="font-serif text-3xl font-bold text-[#282828] md:text-6xl">{blok.title}</h1>
           </div>
 
           {blok.image?.filename && (
             <div className="mx-auto flex max-w-7xl justify-center px-8 md:hidden">
-              <img
-                src={blok.image.filename}
-                alt={blok.image.alt || ""}
-                className="relative z-10 -mb-16 w-full max-w-[340px] object-contain"
-              />
+              <img src={blok.image.filename} alt={blok.image.alt || ""} className="relative z-10 -mb-16 w-full max-w-[340px] object-contain" />
             </div>
           )}
 
           <div className="relative rounded-t bg-[#50543B] px-10 pb-10 pt-28 md:rounded-none md:px-10 md:py-0 lg:px-24 xl:px-36">
             <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-[minmax(0,1fr)_minmax(300px,0.9fr)] md:items-end lg:grid-cols-[minmax(0,0.9fr)_minmax(420px,1fr)] lg:gap-10">
               <div className="max-w-2xl pb-0 md:pb-14">
-                <h2 className="mb-6 font-serif text-2xl font-bold text-white md:mb-10 md:mt-10 md:text-4xl">
-                  {blok.subtitle}
-                </h2>
+                <h2 className="mb-6 font-serif text-2xl font-bold text-white md:mb-10 md:mt-10 md:text-4xl">{blok.subtitle}</h2>
 
                 <div className="space-y-6 text-lg leading-snug text-white md:space-y-7">
-                  {blok.text
-                    ?.split(/\n\s*\n/)
-                    .map((paragraph: string) => (
-                      <p key={paragraph}>{paragraph}</p>
-                    ))}
+                  {blok.text?.split(/\n\s*\n/).map((paragraph: string) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
                 </div>
 
-                {blok.primary_button_text && (
-                  <a
-                    href={blok.primary_button_link?.url}
-                    className="mx-auto mt-8 block w-fit rounded bg-[#C84732] px-9 py-3 font-serif text-xl font-bold text-white md:mx-0 md:mt-12 md:px-10 md:py-4 md:font-sans md:font-semibold"
-                  >
-                    {blok.primary_button_text}
-                  </a>
-                )}
+                <div className="mt-8 flex justify-center md:justify-start">
+                  {blok.button?.map((button: any) => (
+                    <StoryblokComponent blok={button} key={button._uid} />
+                  ))}
+                </div>
               </div>
 
               {blok.image?.filename && (
                 <div className="hidden justify-center md:flex md:-mt-40 md:justify-end lg:-mt-56">
-                  <img
-                    src={blok.image.filename}
-                    alt={blok.image.alt || ""}
-                    className="w-full max-w-[470px] object-contain lg:max-w-[600px] xl:max-w-[660px]"
-                  />
+                  <img src={blok.image.filename} alt={blok.image.alt || ""} className="w-full max-w-[470px] object-contain lg:max-w-[600px] xl:max-w-[660px]" />
                 </div>
               )}
             </div>
@@ -141,25 +167,15 @@ export default function Hero({ blok }: { blok: any }) {
 
     case "kontakt":
       return (
-        <section
-          {...storyblokEditable(blok)}
-          className="bg-[#F5EDE0] px-8 py-16 md:px-20 lg:px-36"
-        >
+        <section {...storyblokEditable(blok)} className="bg-[#F5EDE0] px-8 py-16 md:px-20 lg:px-36">
           <div className="mx-auto max-w-7xl">
-            <h1 className="mb-6 font-serif text-4xl font-bold text-[#282828] md:text-5xl">
-              {blok.title}
-            </h1>
+            <h1 className="mb-6 font-serif text-4xl font-bold text-[#282828] md:text-5xl">{blok.title}</h1>
             <div className="max-w-3xl space-y-6 text-[#505050]">
-              {blok.text
-                ?.split(/\n\s*\n/)
-                .map((paragraph: string) => (
-                  <p
-                    key={paragraph}
-                    className="text-lg leading-relaxed md:text-xl"
-                  >
-                    {paragraph}
-                  </p>
-                ))}
+              {blok.text?.split(/\n\s*\n/).map((paragraph: string) => (
+                <p key={paragraph} className="text-lg leading-relaxed md:text-xl">
+                  {paragraph}
+                </p>
+              ))}
             </div>
           </div>
         </section>
@@ -167,25 +183,15 @@ export default function Hero({ blok }: { blok: any }) {
 
     case "galleri":
       return (
-        <section
-          {...storyblokEditable(blok)}
-          className="bg-[#F5EDE0] px-8 py-14 md:px-20 md:py-20 lg:px-36"
-        >
+        <section {...storyblokEditable(blok)} className="bg-[#F5EDE0] px-8 py-14 md:px-20 md:py-20 lg:px-36">
           <div className="mx-auto max-w-5xl">
-            <h1 className="mb-6 font-serif text-4xl font-bold text-[#282828] md:text-5xl">
-              {blok.title}
-            </h1>
+            <h1 className="mb-6 font-serif text-4xl font-bold text-[#282828] md:text-5xl">{blok.title}</h1>
             <div className="max-w-3xl space-y-6 text-[#505050]">
-              {blok.text
-                ?.split(/\n\s*\n/)
-                .map((paragraph: string) => (
-                  <p
-                    key={paragraph}
-                    className="text-lg leading-relaxed md:text-xl"
-                  >
-                    {paragraph}
-                  </p>
-                ))}
+              {blok.text?.split(/\n\s*\n/).map((paragraph: string) => (
+                <p key={paragraph} className="text-lg leading-relaxed md:text-xl">
+                  {paragraph}
+                </p>
+              ))}
             </div>
           </div>
         </section>

@@ -1,5 +1,4 @@
 import { storyblokInit, apiPlugin } from "@storyblok/react";
-import HomePageButtons from "@/components/HomePageButtons";
 import Page from "@/components/Page";
 import Hero from "@/components/Hero";
 import Murercard from "@/components/Murercard";
@@ -28,7 +27,6 @@ export const initStoryblok = () => {
     accessToken: process.env.STORYBLOK_API_TOKEN,
     use: [apiPlugin],
     components: {
-      homepagebuttons: HomePageButtons,
         page: Page,
         hero: Hero,
         herocard: HeroCard,

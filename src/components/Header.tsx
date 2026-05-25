@@ -4,7 +4,7 @@ import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 
 const serviceLinks = [
-  { href: "/badevaerelse", label: "Badevaerelse" },
+  { href: "/badevaerelse", label: "Badeværelse" },
   { href: "/renovering", label: "Renovering" },
   { href: "/facade", label: "Facade" },
   { href: "/restaurering", label: "Restaurering" },
@@ -15,7 +15,7 @@ export default function Header() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-30 bg-[#F5EDE0] px-6 shadow-md md:px-20">
+    <header className="sticky top-0 z-50 bg-[#F5EDE0] px-6 shadow-md md:px-20">
       <div className="flex items-center justify-between py-3 md:py-1">
         <a href="/" aria-label="Kongsbro og Machado forsiden">
           <img src="/MKMlogo-09.png" alt="Kongsbro og Machado" className="w-[100px] object-contain md:w-[90px]" />
