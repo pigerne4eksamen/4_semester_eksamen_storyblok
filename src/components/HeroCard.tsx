@@ -14,11 +14,11 @@ export default function HeroCard({ blok }: { blok: any }) {
       {...storyblokEditable(blok)}
       className="flex items-center gap-4"
     >
-      {Icon && <Icon className="h-8 w-8 shrink-0 text-[#B64430]" />}
+      {Icon && <Icon className="h-8 w-8 shrink-0 text-cta" />}
 
       <div className="flex flex-col">
-        <h3 className="font-serif text-xl font-bold leading-none text-[#282828]">{blok.sectiontitle}</h3>
-        <p className="text-sm leading-tight text-[#282828]">{blok.text}</p>
+        <h3 className="sectiontitle text-tekst1">{blok.sectiontitle}</h3>
+        <p className="bodytext text-tekst1">{blok.text}</p>
       </div>
     </div>
   );

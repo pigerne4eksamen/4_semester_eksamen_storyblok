@@ -49,6 +49,7 @@ export const initStoryblok = () => {
         kontaktinfocard: KontaktInfoCard,
         inkluderet: Inkluderet,
         button: Button,
+        homepagebuttons: Button,
         galleri: Galleri,
         formular: Formular
     },

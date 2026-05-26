@@ -10,10 +10,10 @@ export default function Faq({ blok }: { blok: any }) {
   return (
     <section
       {...storyblokEditable(blok)}
-      className="bg-[#F5EDE0] px-8 py-20 md:px-20 lg:px-36"
+      className="bg-primary px-8 py-20 md:px-20 lg:px-36"
     >
       <div className="mx-auto max-w-3xl">
-        <h2 className="mb-10 font-serif text-4xl font-bold text-[#282828]">
+        <h2 className="subtitle mb-10 text-tekst1">
           {blok.subtitle}
         </h2>
 

@@ -28,7 +28,7 @@ export default function Murercard({ blok }: { blok: any }) {
       }`}
     >
       <div
-        className={`absolute top-7 h-full w-full rounded bg-[#DDE0D3] ${
+        className={`absolute top-7 h-full w-full rounded bg-tertiary ${
           imageSide === "right" ? "left-7" : "-left-7"
         }`}
       />
@@ -36,7 +36,7 @@ export default function Murercard({ blok }: { blok: any }) {
         <img
           src={blok.image.filename}
           alt={blok.image.alt || blok.title || ""}
-          className="relative z-10 aspect-square w-full rounded object-cover"
+          className="relative z-10 aspect-square w-full object-cover"
         />
       )}
     </div>
@@ -44,17 +44,17 @@ export default function Murercard({ blok }: { blok: any }) {
 
   const content = (
     <div className="max-w-3xl">
-      <h3 className="mb-4 font-serif text-2xl font-bold text-[#282828]">
+      <h3 className="sectiontitle mb-4 text-tekst1">
         {blok.title}
       </h3>
 
-      <div className="space-y-5 whitespace-pre-line text-lg leading-snug text-[#3f3f3f]">
+      <div className="space-y-5 whitespace-pre-line text-tekst1/90">
         {blok.text
           ?.split(/\n\s*\n/)
-          .map((paragraph: string) => <p key={paragraph}>{paragraph}</p>)}
+          .map((paragraph: string) => <p key={paragraph} className="bodytext">{paragraph}</p>)}
       </div>
 
-      <div className="mt-6 flex gap-8 text-[#C84732]">
+      <div className="mt-6 flex gap-8 text-cta">
         {icons.map((item) => {
           const Icon = item.icon;
 
@@ -74,13 +74,13 @@ export default function Murercard({ blok }: { blok: any }) {
   return (
     <section
       {...storyblokEditable(blok)}
-      className={`bg-[#F5EDE0] px-8 md:px-20 lg:px-36 ${
+      className={`bg-primary px-8 md:px-20 lg:px-36 ${
         showHeading ? "py-16" : "pb-16"
       }`}
     >
       <div className="mx-auto max-w-7xl">
         {showHeading && (
-          <h2 className="mb-16 font-serif text-3xl font-bold text-[#282828] md:text-4xl">
+          <h2 className="subtitle mb-16 text-tekst1">
             To fagfolk - én fælles passion
           </h2>
         )}

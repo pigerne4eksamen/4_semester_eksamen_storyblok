@@ -25,7 +25,7 @@ export default function TidligereYdelse({ blok }: { blok: TidligereYdelseBlok })
         <div className="relative">
           {/* ÉN samlet baggrundsboks bag begge billeder */}
           <div
-            className=" absolute -left-3 top-6 w-full h-full bg-[#DCDED1] rounded-xl -z-10 md:-left-10 md:top-10"
+            className=" absolute -left-3 top-6 w-full h-full bg-tertiary rounded-xl -z-10 md:-left-10 md:top-10"
           ></div>
 
           {/* GRID MED SLIDERS */}
@@ -33,9 +33,9 @@ export default function TidligereYdelse({ blok }: { blok: TidligereYdelseBlok })
             {blok.before_after_pair?.map((pair: BeforeAfterPair) => (
               <ReactCompareSlider
                 key={pair._uid}
-                itemOne={<ReactCompareSliderImage src={pair.before.filename} alt="Før" className="rounded-xl" />}
-                itemTwo={<ReactCompareSliderImage src={pair.after.filename} alt="Efter" className="rounded-xl" />}
-                className="w-full aspect-square rounded-xl overflow-hidden shadow-lg"
+                itemOne={<ReactCompareSliderImage src={pair.before.filename} alt="Før" />}
+                itemTwo={<ReactCompareSliderImage src={pair.after.filename} alt="Efter" />}
+                className="image-radius w-full aspect-square overflow-hidden shadow-lg"
               />
             ))}
           </div>

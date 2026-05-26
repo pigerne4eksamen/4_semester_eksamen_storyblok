@@ -3,12 +3,12 @@ import { storyblokEditable, StoryblokComponent } from "@storyblok/react";
 export default function Hero({ blok }: { blok: any }) {
   if (blok?.title?.toLowerCase() === "galleri") {
     return (
-      <section {...storyblokEditable(blok)} className="bg-[#F5EDE0] px-8 py-14 md:px-20 md:py-20 lg:px-36">
+      <section {...storyblokEditable(blok)} className="bg-primary px-8 py-14 md:px-20 md:py-20 lg:px-36">
         <div className="mx-auto max-w-5xl">
-          <h1 className="mb-6 font-serif text-4xl font-bold text-[#282828] md:text-5xl">{blok.title}</h1>
-          <div className="max-w-3xl space-y-6 text-[#505050]">
+          <h1 className="title mb-6 text-tekst1">{blok.title}</h1>
+          <div className="max-w-3xl space-y-6 text-tekst1/80">
             {blok.text?.split(/\n\s*\n/).map((paragraph: string) => (
-              <p key={paragraph} className="text-lg leading-relaxed md:text-xl">
+              <p key={paragraph} className="bodytext">
                 {paragraph}
               </p>
             ))}
@@ -29,16 +29,16 @@ export default function Hero({ blok }: { blok: any }) {
           : [];
 
       return (
-        <section {...storyblokEditable(blok)} className="bg-[#F5EDE0] px-6 py-10 md:px-0 md:py-[52px]">
+        <section {...storyblokEditable(blok)} className="bg-primary px-6 py-10 md:px-0 md:py-[52px]">
           <div className="mx-auto flex max-w-[1010px] flex-col gap-8 md:h-[523px] md:flex-row md:items-stretch md:justify-between md:gap-16">
             {/* Venstre kolonne */}
             <div className="flex flex-col md:w-[490px] md:justify-between">
               <div>
                 {/* H1 + H2 */}
                 <div className="md:flex md:flex-col">
-                  <h2 className="mb-5 text-center text-xl font-light uppercase tracking-[0.16em] text-[#50543B] md:text-left md:text-[30px] md:leading-none">{blok.subtitle}</h2>
+                  <h2 className="subtitle mb-5 text-center font-light uppercase tracking-[0.16em] text-secondary md:text-left">{blok.subtitle}</h2>
 
-                  <h1 className="mb-14 text-center font-serif text-4xl font-bold leading-[0.95] text-[#050505] md:text-left md:text-[62px]">
+                  <h1 className="title mb-14 text-center text-tekst1 md:text-left">
                     {titleLines.length > 0
                       ? titleLines.map((line: string) => (
                           <span key={line} className="block">
@@ -52,7 +52,7 @@ export default function Hero({ blok }: { blok: any }) {
                 {/* Billede på mobil */}
                 {blok.image?.filename && (
                   <div className="mb-8 flex justify-center md:hidden">
-                    <img src={blok.image.filename} alt={blok.image.alt || ""} className="h-[500px] w-full rounded-sm object-cover" />
+                    <img src={blok.image.filename} alt={blok.image.alt || ""} className="h-[500px] w-full object-cover" />
                   </div>
                 )}
 
@@ -65,7 +65,7 @@ export default function Hero({ blok }: { blok: any }) {
               </div>
 
               {/* Cards / ikoner */}
-              <div className="flex flex-row justify-center gap-12 text-[#282828] md:justify-start md:gap-20">
+              <div className="flex flex-row justify-center gap-12 text-tekst1 md:justify-start md:gap-20">
                 {blok.cards?.map((card: any) => (
                   <StoryblokComponent blok={card} key={card._uid} />
                 ))}
@@ -75,7 +75,7 @@ export default function Hero({ blok }: { blok: any }) {
             {/* Desktop billede */}
             {blok.image?.filename && (
               <div className="hidden md:flex md:w-[455px]">
-                <img src={blok.image.filename} alt={blok.image.alt || ""} className="h-full w-full rounded-sm object-cover" />
+                <img src={blok.image.filename} alt={blok.image.alt || ""} className="h-full w-full object-cover" />
               </div>
             )}
           </div>
@@ -84,7 +84,7 @@ export default function Hero({ blok }: { blok: any }) {
 
     case "ydelser":
       return (
-        <section {...storyblokEditable(blok)} className="bg-[#F5EDE0]">
+        <section {...storyblokEditable(blok)} className="bg-primary">
           <div className="mx-auto px-4 md:px-[155px] py-10">
             <div className="flex flex-col md:flex-row gap-8 items-start">
               {/* VENSTRE SIDE */}
@@ -92,14 +92,14 @@ export default function Hero({ blok }: { blok: any }) {
                 {/* TOP CONTENT */}
                 <div className="max-w-xl">
                   {/* H1 */}
-                  <h1 className="bg-[#50543B] text-3xl md:text-5xl text-white font-bold p-6 rounded-r-lg drop-shadow-md max-w-[250px] md:max-w-[700px] -ml-4 md:-ml-[155px] pl-4 md:pl-[155px] mb-6">{blok.title}</h1>
+                  <h1 className="title bg-secondary text-tekst2 p-6 rounded-r-lg drop-shadow-md max-w-[250px] md:max-w-[700px] -ml-4 md:-ml-[155px] pl-4 md:pl-[155px] mb-6">{blok.title}</h1>
 
                   {/* MOBILE IMAGE */}
-                  {blok.image?.filename && <img src={blok.image.filename} alt={blok.image.alt || ""} className="w-full h-auto object-cover mb-6 md:hidden rounded-md" />}
+                  {blok.image?.filename && <img src={blok.image.filename} alt={blok.image.alt || ""} className="w-full h-auto object-cover mb-6 md:hidden" />}
 
-                  <h2 className="text-2xl md:text-3xl font-bold text-[#282828] mb-4">{blok.subtitle}</h2>
+                  <h2 className="subtitle text-tekst1 mb-4">{blok.subtitle}</h2>
 
-                  <p className="text-base md:text-lg text-[#282828] mb-7">{blok.text}</p>
+                  <p className="bodytext text-tekst1 mb-7">{blok.text}</p>
                 </div>
 
                 {/* BUTTON */}
@@ -111,7 +111,7 @@ export default function Hero({ blok }: { blok: any }) {
               </div>
 
               {/* DESKTOP IMAGE */}
-              <div className="hidden md:block self-stretch">{blok.image?.filename && <img src={blok.image.filename} alt={blok.image.alt || ""} className="w-[360px] h-full object-cover rounded-md" />}</div>
+              <div className="hidden md:block self-stretch">{blok.image?.filename && <img src={blok.image.filename} alt={blok.image.alt || ""} className="w-[360px] h-full object-cover" />}</div>
             </div>
           </div>
         </section>
@@ -119,9 +119,9 @@ export default function Hero({ blok }: { blok: any }) {
 
     case "omos":
       return (
-        <section {...storyblokEditable(blok)} className="relative overflow-hidden bg-[#F5EDE0]">
+        <section {...storyblokEditable(blok)} className="relative overflow-hidden bg-primary">
           <div className="mx-auto max-w-7xl px-10 pb-2 pt-2 md:px-28 md:pb-14 md:pt-16">
-            <h1 className="font-serif text-3xl font-bold text-[#282828] md:text-6xl">{blok.title}</h1>
+            <h1 className="title text-tekst1">{blok.title}</h1>
           </div>
 
           {blok.image?.filename && (
@@ -130,14 +130,14 @@ export default function Hero({ blok }: { blok: any }) {
             </div>
           )}
 
-          <div className="relative rounded-t bg-[#50543B] px-10 pb-10 pt-28 md:rounded-none md:px-10 md:py-0 lg:px-24 xl:px-36">
+          <div className="relative rounded-t bg-secondary px-10 pb-10 pt-28 md:rounded-none md:px-10 md:py-0 lg:px-24 xl:px-36">
             <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-[minmax(0,1fr)_minmax(300px,0.9fr)] md:items-end lg:grid-cols-[minmax(0,0.9fr)_minmax(420px,1fr)] lg:gap-10">
               <div className="max-w-2xl pb-0 md:pb-14">
-                <h2 className="mb-6 font-serif text-2xl font-bold text-white md:mb-10 md:mt-10 md:text-4xl">{blok.subtitle}</h2>
+                <h2 className="subtitle mb-6 text-tekst2 md:mb-10 md:mt-10">{blok.subtitle}</h2>
 
-                <div className="space-y-6 text-lg leading-snug text-white md:space-y-7">
+                <div className="space-y-6 text-tekst2 md:space-y-7">
                   {blok.text?.split(/\n\s*\n/).map((paragraph: string) => (
-                    <p key={paragraph}>{paragraph}</p>
+                    <p key={paragraph} className="bodytext">{paragraph}</p>
                   ))}
                 </div>
 
@@ -160,12 +160,12 @@ export default function Hero({ blok }: { blok: any }) {
 
     case "kontakt":
       return (
-        <section {...storyblokEditable(blok)} className="bg-[#F5EDE0] px-8 py-16 md:px-20 lg:px-36">
+        <section {...storyblokEditable(blok)} className="bg-primary px-8 py-16 md:px-20 lg:px-36">
           <div className="mx-auto max-w-7xl">
-            <h1 className="mb-6 font-serif text-4xl font-bold text-[#282828] md:text-5xl">{blok.title}</h1>
-            <div className="max-w-3xl space-y-6 text-[#505050]">
+            <h1 className="title mb-6 text-tekst1">{blok.title}</h1>
+            <div className="max-w-3xl space-y-6 text-tekst1/80">
               {blok.text?.split(/\n\s*\n/).map((paragraph: string) => (
-                <p key={paragraph} className="text-lg leading-relaxed md:text-xl">
+                <p key={paragraph} className="bodytext">
                   {paragraph}
                 </p>
               ))}
@@ -176,12 +176,12 @@ export default function Hero({ blok }: { blok: any }) {
 
     case "galleri":
       return (
-        <section {...storyblokEditable(blok)} className="bg-[#F5EDE0] px-8 py-14 md:px-20 md:py-20 lg:px-36">
+        <section {...storyblokEditable(blok)} className="bg-primary px-8 py-14 md:px-20 md:py-20 lg:px-36">
           <div className="mx-auto max-w-5xl">
-            <h1 className="mb-6 font-serif text-4xl font-bold text-[#282828] md:text-5xl">{blok.title}</h1>
-            <div className="max-w-3xl space-y-6 text-[#505050]">
+            <h1 className="title mb-6 text-tekst1">{blok.title}</h1>
+            <div className="max-w-3xl space-y-6 text-tekst1/80">
               {blok.text?.split(/\n\s*\n/).map((paragraph: string) => (
-                <p key={paragraph} className="text-lg leading-relaxed md:text-xl">
+                <p key={paragraph} className="bodytext">
                   {paragraph}
                 </p>
               ))}
@@ -193,7 +193,7 @@ export default function Hero({ blok }: { blok: any }) {
     default:
       return (
         <section {...storyblokEditable(blok)}>
-          <h1>{blok?.title || "Hero (no variant)"}</h1>
+          <h1 className="title">{blok?.title || "Hero (no variant)"}</h1>
         </section>
       );
   }

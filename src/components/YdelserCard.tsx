@@ -8,7 +8,7 @@ export default function YdelserCard({ blok }: { blok: any }) {
     <Link
       href={href}
       {...storyblokEditable(blok)}
-      className="group relative aspect-[290/391] cursor-pointer overflow-hidden rounded text-left"
+      className="image-radius group relative aspect-[290/391] cursor-pointer overflow-hidden text-left"
     >
       {blok.image?.filename && (
         <img
@@ -18,14 +18,14 @@ export default function YdelserCard({ blok }: { blok: any }) {
         />
       )}
 
-      <div className="absolute inset-0 bg-black/35 transition-colors duration-300 group-hover:bg-black/50" />
+      <div className="absolute inset-0 bg-tekst1/35 transition-colors duration-300 group-hover:bg-tekst1/50" />
 
       <div className="absolute inset-0 flex flex-col items-center justify-center gap-5 px-6 text-center">
-        <h3 className="font-serif text-2xl font-bold text-white">
+        <h3 className="sectiontitle text-tekst2">
           {blok.sectiontitle}
         </h3>
 
-        <span className="rounded bg-[#F5EDE0] px-6 py-2 text-base font-semibold text-[#282828] opacity-100 transition-opacity duration-300 md:opacity-0 md:group-hover:opacity-100">
+        <span className="rounded bg-primary px-6 py-2 text-base font-semibold text-tekst1 opacity-100 transition-opacity duration-300 md:opacity-0 md:group-hover:opacity-100">
           Læs mere
         </span>
       </div>

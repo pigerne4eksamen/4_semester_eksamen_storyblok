@@ -12,19 +12,19 @@ export default function FaqItem({
   onToggle,
 }: FaqItemProps) {
   return (
-    <div {...storyblokEditable(blok)} className="border border-[#50543B]">
+    <div {...storyblokEditable(blok)} className="border border-secondary">
       <button
         type="button"
         onClick={onToggle}
         aria-expanded={isOpen}
         className="flex w-full items-center justify-between gap-6 px-6 py-4 text-left"
       >
-        <span className="font-serif text-xl font-bold text-[#282828]">
+        <span className="font-serif text-xl font-bold text-tekst1">
           {blok.question}
         </span>
         <svg
           aria-hidden="true"
-          className={`h-5 w-5 shrink-0 text-[#50543B] transition-transform duration-200 ${
+          className={`h-5 w-5 shrink-0 text-secondary transition-transform duration-200 ${
             isOpen ? "rotate-180" : ""
           }`}
           fill="none"
@@ -46,7 +46,7 @@ export default function FaqItem({
         }`}
       >
         <div className="overflow-hidden">
-          <p className="px-6 pb-5 pt-1 text-lg leading-relaxed text-[#282828]">
+          <p className="bodytext px-6 pb-5 pt-1 text-tekst1">
             {blok.answer}
           </p>
         </div>

@@ -20,13 +20,13 @@ export default function VaerdiCard({ blok }: { blok: any }) {
 
   return (
     <article {...storyblokEditable(blok)} className="flex flex-col items-center text-center">
-      <div className="mb-7 flex h-28 w-28 items-center justify-center rounded bg-[#50543B] text-[#F5EDE0]">
+      <div className="mb-7 flex h-28 w-28 items-center justify-center rounded bg-secondary text-primary">
         <Icon className="text-6xl" />
       </div>
 
-      <h3 className="mb-5 font-serif text-3xl font-bold text-[#282828]">{blok.title}</h3>
+      <h3 className="sectiontitle mb-5 text-tekst1">{blok.title}</h3>
 
-      <p className="whitespace-pre-line text-xl leading-snug text-[#282828]">{blok.text}</p>
+      <p className="bodytext whitespace-pre-line text-tekst1">{blok.text}</p>
     </article>
   );
 }

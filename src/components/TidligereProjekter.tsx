@@ -21,10 +21,10 @@ const TidligereProjekter = ({ blok }: any) => {
   if (!total) return null;
 
   return (
-    <section {...storyblokEditable(blok)} className="bg-[#F5EDE0] py-10 md:py-14 overflow-hidden">
+    <section {...storyblokEditable(blok)} className="bg-primary py-10 md:py-14 overflow-hidden">
       <div className="mx-auto px-4 md:px-[155px] text-center">
         {/* Title */}
-        <h2 className="text-2xl md:text-4xl font-bold text-[#282828] mb-8 md:mb-12">{blok.subtitle}</h2>
+        <h2 className="subtitle text-tekst1 mb-8 md:mb-12">{blok.subtitle}</h2>
 
         {/* Stage */}
         <div className="relative flex justify-center items-center h-[360px] md:h-[520px]">
@@ -43,7 +43,7 @@ const TidligereProjekter = ({ blok }: any) => {
                   transition-all
                   duration-700
                   ease-out
-                  rounded-2xl
+                  image-radius
                   overflow-hidden
                   object-cover
 
