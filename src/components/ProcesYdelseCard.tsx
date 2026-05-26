@@ -2,7 +2,7 @@ import { storyblokEditable } from "@storyblok/react";
 
 export default function ProcesYdelseCard({ blok }: { blok: any }) {
   return (
-    <div className="bg-tertiary rounded-md shadow-xl p-10 mx-10 md:p-6" {...storyblokEditable(blok)}>
+    <div className="bg-tertiary rounded-md shadow-xl p-10 md:p-6" {...storyblokEditable(blok)}>
       <div className="flex flex-row gap-4">
         <h1 className="title text-secondary">{blok.number}</h1>
         <div>
