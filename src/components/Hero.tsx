@@ -138,7 +138,7 @@ export default function Hero({ blok }: { blok: any }) {
 
     case "kontakt":
       return (
-        <section {...storyblokEditable(blok)} className="bg-primary px-8 py-16 md:px-20 lg:px-36">
+        <section {...storyblokEditable(blok)} className="bg-primary px-8 pt-16 pb-10 md:px-20 lg:px-36">
           <div className="mx-auto max-w-7xl">
             <h1 className="title mb-6 text-tekst1">{blok.title}</h1>
             <div className="max-w-3xl space-y-6 text-tekst1/80">

@@ -33,9 +33,8 @@ export default function Galleri({ blok }: { blok: any }) {
   const nextImage = billeder[nextIndex];
 
   return (
-    <section {...storyblokEditable(blok)} className="bg-[#DADCCE] px-0 py-4 md:px-0">
-      <div id="top"></div>
-      <div className="mx-auto max-w-6xl">
+    <section {...storyblokEditable(blok)} className="bg-[#DADCCE] px-0 pb-4 pt-6 md:px-0">
+      <div className="mx-auto max-w-5xl">
         <div className="relative overflow-hidden px-4 pt-0 md:px-0 md:pt-1">
           <div className="relative h-[520px] md:h-[620px]">
             <div className="absolute left-[3%] top-[54%] z-10 hidden h-[82%] w-[25%] translate-y-[-54%] overflow-hidden rounded-xl md:block">
@@ -61,16 +60,11 @@ export default function Galleri({ blok }: { blok: any }) {
           </div>
         </div>
 
-        <div className="mt-10 grid grid-cols-3 gap-3 px-4 sm:grid-cols-4 md:grid-cols-6 md:px-0 lg:grid-cols-8">
+        <div className="mt-10 grid grid-cols-3 gap-3 px-4 sm:grid-cols-4 md:grid-cols-6 md:px-8 md:pb-8 lg:grid-cols-8">
           {billeder.map((billede: GalleryImage, index: number) => (
             <button key={billede._uid} type="button" onClick={() => setActiveIndex(index)} className={`overflow-hidden rounded-2xl border-2 transition ${index === currentIndex ? "border-[#C44931]" : "border-transparent hover:border-[#C44931]/60"}`}>
               <img src={billede.image?.filename} alt={billede.image?.alt || billede.label || ""} className="h-24 w-full object-cover" />
             </button>
-          ))}
-        </div>
-        <div className="mt-8 flex justify-center md:justify-start">
-          {blok.button?.map((button: any) => (
-            <StoryblokComponent blok={button} key={button._uid} />
           ))}
         </div>
       </div>
