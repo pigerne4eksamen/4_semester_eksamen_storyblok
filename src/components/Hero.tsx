@@ -12,8 +12,8 @@ export default function Hero({ blok }: { blok: any }) {
           : [];
 
       return (
-        <section {...storyblokEditable(blok)} className="bg-primary px-6 py-10 md:px-0 md:py-[52px]">
-          <div className="mx-auto flex max-w-[90%] flex-col gap-8 md:h-[523px] md:flex-row md:items-stretch md:justify-between md:gap-16">
+        <section {...storyblokEditable(blok)} className="bg-primary px-6 py-10 md:px-5 lg:px-45 md:py-[42px]">
+          <div className="mx-auto flex max-w-[90%] flex-col gap-8 md:h-[523px] md:flex-row md:items-stretch md:justify-between md:gap-6">
             {/* Venstre kolonne */}
             <div className="flex flex-col md:w-[490px] md:justify-between">
               <div>
