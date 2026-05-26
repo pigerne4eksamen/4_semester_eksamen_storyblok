@@ -12,14 +12,13 @@ export default function HeroCard({ blok }: { blok: any }) {
   return (
     <div
       {...storyblokEditable(blok)}
-      className="flex items-start gap-3" // ikon + tekst side om side
+      className="flex items-center gap-4"
     >
-      {Icon && <Icon className="w-6 h-6 text-[#B64430]" />}
+      {Icon && <Icon className="h-8 w-8 shrink-0 text-[#B64430]" />}
 
-      {/* ⭐ Tekstblok der holder h3 og p under hinanden ⭐ */}
       <div className="flex flex-col">
-        <h3 className="text-lg font-semibold">{blok.sectiontitle}</h3>
-        <p className="text-sm text-[#282828]">{blok.text}</p>
+        <h3 className="font-serif text-xl font-bold leading-none text-[#282828]">{blok.sectiontitle}</h3>
+        <p className="text-sm leading-tight text-[#282828]">{blok.text}</p>
       </div>
     </div>
   );
