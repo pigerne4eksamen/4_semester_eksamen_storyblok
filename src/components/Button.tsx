@@ -2,9 +2,9 @@ import Link from "next/link";
 import { storyblokEditable } from "@storyblok/react";
 
 const variants = {
-  primary: "bg-[var(--cta)] text-[var(--tekst2)] border-[var(--cta)] hover:brightness-90",
-  secondary: "bg-[var(--cta)] text-[var(--tekst2)] border-[var(--cta)] hover:brightness-90",
-  outline: "bg-transparent text-[var(--cta)] border-[var(--cta)] hover:bg-[var(--cta)] hover:text-[var(--tekst2)]",
+  primary: "bg-[var(--cta)] text-[var(--tekst2)] border-[var(--cta)] hover:brightness-90 font-montserrat",
+  secondary: "bg-[var(--cta)] text-[var(--tekst2)] border-[var(--cta)] hover:brightness-90 font-montserrat",
+  outline: "bg-transparent text-[var(--cta)] border-[var(--cta)] hover:bg-[var(--cta)] hover:text-[var(--tekst2)] font-montserrat",
 };
 
 export default function Button({ blok }: { blok: any }) {
