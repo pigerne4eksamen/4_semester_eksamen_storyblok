@@ -20,11 +20,11 @@ export default function VaerdiCard({ blok }: { blok: any }) {
 
   return (
     <article {...storyblokEditable(blok)} className="flex flex-col items-center text-center">
-      <div className="mb-7 flex h-28 w-28 items-center justify-center rounded bg-secondary text-primary">
-        <Icon className="text-6xl" />
+      <div className="mb-4 flex h-18 w-18 items-center justify-center rounded bg-secondary text-primary">
+        <Icon className="text-4xl" />
       </div>
 
-      <h3 className="sectiontitle mb-5 text-tekst1">{blok.title}</h3>
+      <h3 className="sectiontitle mb-2 text-tekst1">{blok.title}</h3>
 
       <p className="bodytext whitespace-pre-line text-tekst1">{blok.text}</p>
     </article>
