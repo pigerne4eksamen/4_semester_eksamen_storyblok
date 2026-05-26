@@ -23,7 +23,7 @@ export default function Hero({ blok }: { blok: any }) {
 
                   {blok.logoimg?.filename && (
                     <div className="mb-8 flex justify-center md:justify-start">
-                      <img src={blok.logoimg.filename} alt={blok.logoimg.alt || ""} className="h-[150px] object-fit" />
+                      <img src={blok.logoimg.filename} alt={blok.logoimg.alt || ""} className="h-[130px] object-fit md:h-[150px]" />
                     </div>
                   )}
                 </div>
@@ -63,14 +63,14 @@ export default function Hero({ blok }: { blok: any }) {
     case "ydelser":
       return (
         <section {...storyblokEditable(blok)} className="bg-primary">
-          <div className="mx-auto px-4 md:px-[155px] py-10">
+          <div className="mx-auto px-8 md:px-[155px] py-10">
             <div className="flex flex-col md:flex-row gap-8 items-start">
               {/* VENSTRE SIDE */}
               <div className="flex-1 flex flex-col justify-between self-stretch">
                 {/* TOP CONTENT */}
                 <div className="max-w-xl">
                   {/* H1 */}
-                  <h1 className="title bg-secondary text-tekst2 p-6 rounded-r-lg drop-shadow-md max-w-[250px] md:max-w-[700px] -ml-4 md:-ml-[155px] pl-4 md:pl-[155px] mb-6">{blok.title}</h1>
+                  <h1 className="title bg-secondary text-tekst2 p-6 rounded-r-lg drop-shadow-md max-w-[250px] md:max-w-[700px] -ml-8 md:-ml-[155px] pl-4 md:pl-[155px] mb-6">{blok.title}</h1>
 
                   {/* MOBILE IMAGE */}
                   {blok.image?.filename && <img src={blok.image.filename} alt={blok.image.alt || ""} className="w-full h-auto object-cover mb-6 md:hidden" />}
