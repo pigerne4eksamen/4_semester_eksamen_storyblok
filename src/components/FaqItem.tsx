@@ -1,4 +1,5 @@
 import { storyblokEditable } from "@storyblok/react";
+import { IoIosArrowDown } from "react-icons/io";
 
 type FaqItemProps = {
   blok: any;
@@ -22,22 +23,12 @@ export default function FaqItem({
         <span className="font-serif text-xl font-bold text-tekst1">
           {blok.question}
         </span>
-        <svg
+        <IoIosArrowDown
           aria-hidden="true"
           className={`h-5 w-5 shrink-0 text-secondary transition-transform duration-200 ${
             isOpen ? "rotate-180" : ""
           }`}
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth="2"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="m6 9 6 6 6-6"
-          />
-        </svg>
+        />
       </button>
 
       <div
