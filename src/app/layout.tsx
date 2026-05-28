@@ -3,6 +3,13 @@ import "./globals.css";
 import { initStoryblok } from "@/lib/storyblok";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { EB_Garamond } from "next/font/google";
+
+const ebGaramond = EB_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
+
 initStoryblok();
 
 export const metadata: Metadata = {
@@ -17,10 +24,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full antialiased">
-      <head>
-        <link rel="stylesheet" href="https://use.typekit.net/rlz0dxr.css" />
-      </head>
-      <body className="min-h-full flex flex-col">
+      <head></head>
+      <body className={`min-h-full flex flex-col ${ebGaramond.className}`}>
         <Header />
         {children}
         <Footer />

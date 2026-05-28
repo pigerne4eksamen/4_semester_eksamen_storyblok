@@ -104,7 +104,7 @@ export default function Form() {
         <div className="mb-4 bg-white rounded-sm">
           <div className="mx-6">
             <div className="mb-4 pt-6">
-              <label className="block text-[#282828] mb-2" htmlFor="name">
+              <label className="block text-[var(--tekst1)] mb-2" htmlFor="name">
                 Navn*
               </label>
               <input
@@ -120,13 +120,13 @@ export default function Form() {
                 id="name"
                 type="text"
                 placeholder="Indtast dit fulde navn"
-                className="w-full p-3 border rounded text-[#282828] border-gray-300 bg-gray-50 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#282828] shadow-xs transition"
+                className="w-full p-3 border rounded text-[var(--tekst1)] border-gray-300 bg-gray-50 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--tekst1)] shadow-xs transition"
               />
               {errors.name && <p className="text-red-600 mt-2">{errors.name.message}</p>}
             </div>
             <div className="mb-4 flex flex-col">
               <div>
-                <label className="block text-[#282828] mb-2" htmlFor="phone">
+                <label className="block text-[var(--tekst1)] mb-2" htmlFor="phone">
                   Telefon*
                 </label>
                 <input
@@ -148,14 +148,14 @@ export default function Form() {
                   id="phone"
                   type="tel"
                   placeholder="+45 XX XX XX XX"
-                  className="w-full p-3 border rounded text-[#282828] border-gray-300 bg-gray-50 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#282828] shadow-xs transition"
+                  className="w-full p-3 border rounded text-[var(--tekst1)] border-gray-300 bg-gray-50 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--tekst1)] shadow-xs transition"
                 />
                 {errors.phone && <span className="text-red-400 mt-2">{errors.phone.message}</span>}
               </div>
             </div>
             <div className="mb-4 flex flex-col">
               <div>
-                <label className="block text-[#282828] mb-2" htmlFor="phone">
+                <label className="block text-[var(--tekst1)] mb-2" htmlFor="phone">
                   E-mail*
                 </label>
                 <input
@@ -169,14 +169,14 @@ export default function Form() {
                   id="email"
                   type="email"
                   placeholder="test@gmail.com"
-                  className="w-full p-3 border rounded text-[#282828] border-gray-300 bg-gray-50 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#282828] shadow-xs transition"
+                  className="w-full p-3 border rounded text-[var(--tekst1)] border-gray-300 bg-gray-50 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--tekst1)] shadow-xs transition"
                 />
                 {errors.email && <p className="text-red-600 mt-1">{errors.email.message}</p>}
               </div>
             </div>
             <div className="mb-6 flex flex-col md:flex-row gap-4">
               <div className="flex-1">
-                <label className="block text-[#282828] mb-2" htmlFor="address">
+                <label className="block text-[var(--tekst1)] mb-2" htmlFor="address">
                   Adresse*
                 </label>
                 <input
@@ -187,12 +187,12 @@ export default function Form() {
                   id="address"
                   type="text"
                   placeholder="Indtast din adresse"
-                  className="w-full p-3 border rounded text-[#282828] border-gray-300 bg-gray-50 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#282828] shadow-xs transition"
+                  className="w-full p-3 border rounded text-[var(--tekst1)] border-gray-300 bg-gray-50 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--tekst1)] shadow-xs transition"
                 />
                 {errors.address && <p className="text-red-600 mt-1">{errors.address.message}</p>}
               </div>
               <div className="w-full md:w-48">
-                <label className="block text-[#282828] mb-2" htmlFor="zip">
+                <label className="block text-[var(--tekst1)] mb-2" htmlFor="zip">
                   Post nr.*
                 </label>
                 <input
@@ -206,13 +206,13 @@ export default function Form() {
                   id="zip"
                   type="text"
                   placeholder="Post nr."
-                  className="w-full p-3 border rounded text-[#282828] border-gray-300 bg-gray-50 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#282828] shadow-xs transition"
+                  className="w-full p-3 border rounded text-[var(--tekst1)] border-gray-300 bg-gray-50 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--tekst1)] shadow-xs transition"
                 />
                 {errors.zip && <p className="text-red-600 mt-1">{errors.zip.message}</p>}
               </div>
             </div>
             <div className="mb-6">
-              <label className="block text-[#282828] mb-2" htmlFor="message">
+              <label className="block text-[var(--tekst1)] mb-2" htmlFor="message">
                 Besked*
               </label>
               <textarea
@@ -224,13 +224,13 @@ export default function Form() {
                 id="message"
                 placeholder="Fortæl os om dit projekt"
                 rows={5}
-                className="w-full p-3 border rounded text-[#282828] border-gray-300 bg-gray-50 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#282828] shadow-xs transition"
+                className="w-full p-3 border rounded text-[var(--tekst1)] border-gray-300 bg-gray-50 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--tekst1)] shadow-xs transition"
               />
               {errors.message && <p className="text-red-600 mt-1">{errors.message.message}</p>}
             </div>
 
             <div className="mb-6">
-              <label className="block text-[#282828] mb-2" htmlFor="image">
+              <label className="block text-[var(--tekst1)] mb-2" htmlFor="image">
                 Billede
               </label>
               <label htmlFor="image" className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-gray-200 rounded-lg bg-gray-50 cursor-pointer">

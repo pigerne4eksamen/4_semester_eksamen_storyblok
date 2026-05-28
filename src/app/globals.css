@@ -42,7 +42,7 @@ img,
 
 h1,
 .title {
-  font-family: "minion-pro", serif;
+  font-family: "ebGaramond", serif;
   font-size: clamp(1.875rem, 6vw, 3rem);
   font-weight: 700;
   line-height: 0.98;
@@ -50,7 +50,7 @@ h1,
 
 h2,
 .subtitle {
-  font-family: "minion-pro", serif;
+  font-family: "ebGaramond", serif;
   font-size: clamp(1.5rem, 4vw, 2rem);
   font-weight: 700;
   line-height: 1.1;
@@ -58,7 +58,7 @@ h2,
 
 h3,
 .sectiontitle {
-  font-family: "minion-pro", serif;
+  font-family: "ebGaramond", serif;
   font-size: clamp(1.25rem, 2.5vw, 1.5rem);
   font-weight: 600;
   line-height: 1.15;
