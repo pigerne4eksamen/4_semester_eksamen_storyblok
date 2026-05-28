@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased">
       <head></head>
-      <body className={`min-h-full flex flex-col ${ebGaramond.className}`}>
+      <body className="min-h-full flex flex-col">
         <Header />
         {children}
         <Footer />
