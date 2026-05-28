@@ -8,7 +8,9 @@ const variants = {
 };
 
 export default function Button({ blok }: { blok: any }) {
-  const variant = String(blok.variant || "primary").trim().toLowerCase();
+  const variant = String(blok.variant || "primary")
+    .trim()
+    .toLowerCase();
   const variantClass = variants[variant as keyof typeof variants] || variants.primary;
 
   return (
