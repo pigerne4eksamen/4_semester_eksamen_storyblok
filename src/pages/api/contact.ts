@@ -50,8 +50,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       to: "alre0003@stud.ek.dk", //Skal udskiftes med virksomhedens mail, når de har en
       subject: "Ny kontaktformular besked",
       html: `<p><strong>Navn:</strong> ${fields.name}</p>
-             <p><strong>Email:</strong> ${fields.email}</p>
              <p><strong>Telefon:</strong> ${fields.phone}</p>
+             <p><strong>Email:</strong> ${fields.email}</p>
+             <p><strong>Adresse:</strong> ${fields.address}</p>
+             <p><strong>Postnummer:</strong> ${fields.zip}</p>
              <p><strong>Besked:</strong> ${fields.message}</p>`,
       attachments,
     });
