@@ -53,6 +53,9 @@ export default function Hero({ blok }: { blok: any }) {
       );
 
     case "ydelser":
+      // Vi fjerner IKKE de tomme linjer, så linjeskift bevares
+      const lines = blok.text ? blok.text.split("\n") : [];
+
       return (
         <section {...storyblokEditable(blok)} className="bg-primary">
           <div className="mx-auto px-8 md:px-[155px] py-10">
@@ -67,9 +70,37 @@ export default function Hero({ blok }: { blok: any }) {
                   {/* MOBILE IMAGE */}
                   {blok.image?.filename && <img src={blok.image.filename} alt={blok.image.alt || ""} className="w-full h-auto object-cover mb-6 md:hidden" />}
 
-                  <h2 className="subtitle text-tekst1 mb-4">{blok.subtitle}</h2>
+                  <h2 className="subtitle text-tekst1">{blok.subtitle}</h2>
 
-                  <p className="bodytext text-tekst1 mb-7">{blok.text}</p>
+                  {/* DYNAMISK INDHOLD */}
+                  <div className="text-tekst1">
+                    {lines.map((line: string, index: number) => {
+                      const trimmedLine = line.trim();
+
+                      // 1. Hvis linjen er helt tom, laver vi et usynligt linjeskift
+                      if (trimmedLine === "") {
+                        return <div key={index} className="h-4" />;
+                      }
+
+                      // 2. Hvis linjen starter med en bindestreg, lav den til et listepunkt
+                      if (trimmedLine.startsWith("-")) {
+                        // ^-\s* fjerner KUN bindestregen helt i starten af linjen
+                        const cleanText = trimmedLine.replace(/^-\s*/, "");
+                        return (
+                          <ul key={index} className="list-disc pl-5 bodytext">
+                            <li>{cleanText}</li>
+                          </ul>
+                        );
+                      }
+
+                      // 3. Ellers renderes det som almindeligt tekstafsnit
+                      return (
+                        <p key={index} className="bodytext mb-2">
+                          {line}
+                        </p>
+                      );
+                    })}
+                  </div>
                 </div>
 
                 {/* BUTTON */}
@@ -81,7 +112,7 @@ export default function Hero({ blok }: { blok: any }) {
               </div>
 
               {/* DESKTOP IMAGE */}
-              <div className="hidden md:block self-stretch">{blok.image?.filename && <img src={blok.image.filename} alt={blok.image.alt || ""} className="w-[360px] h-full object-cover" />}</div>
+              <div className="hidden md:block self-stretch">{blok.image?.filename && <img src={blok.image.filename} alt={blok.image.alt || ""} className="w-[500px] h-full object-cover" />}</div>
             </div>
           </div>
         </section>
